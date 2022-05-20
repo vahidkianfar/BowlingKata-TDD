@@ -7,9 +7,7 @@ namespace BowlingGameTest;
 public class Tests
 {
     [SetUp]
-    public void Setup()
-    {
-    }
+    public void Setup(){}
 
     [Test]
     public void FirstTest()
@@ -22,7 +20,6 @@ public class Tests
         Assert.AreEqual(expected,game.rawScore);
     }
     
-  
     [Test]
     public void Conversion_Should_Return_Collect_Value()
     {
@@ -53,6 +50,7 @@ public class Tests
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
+    
     [Test]
     public void FinalScore_Should_Return_Correct_Value_For_All_Spare()
     {
@@ -63,6 +61,7 @@ public class Tests
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
+    
     [Test]
     public void FinalScore_Should_Return_Correct_Value_For_Other_Possible_Scores()
     {
@@ -73,6 +72,7 @@ public class Tests
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
+    
     [Test]
     public void FinalScore_Should_Return_Correct_Value_For_Sprike()
     {
@@ -83,12 +83,13 @@ public class Tests
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
+    
     [Test]
     public void FinalScore_Should_Return_Correct_Value_For_All_Missed()
     {
         
         var game = new BowlingGame("-- -- -- -- -- -- -- -- -- --");
-        //var game = new BowlingGame("00 00 00 00 00 00 00 00 00 00");
+        //var game = new BowlingGame("00 00 00 00 00 00 00 00 00 00"); // Same
 
         var expected = 0;
         
@@ -124,5 +125,4 @@ public class Tests
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
-    
 }
