@@ -104,6 +104,25 @@ public class Tests
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
+    [Test]
+    public void FinalScore_Should_Return_Correct_Value_For_Invalid_Input()
+    {
+        
+        var game = new BowlingGame("'X abc  X!X@X#X$X%X^X&X*X*()-0");
 
+        var expected = 270;
+        
+        Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
+    }
+    [Test]
+    public void FinalScore_Should_Return_Correct_Value_For_Empty_Input()
+    {
+        
+        var game = new BowlingGame("");
+
+        var expected = 0;
+        
+        Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
+    }
     
 }
