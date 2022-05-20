@@ -57,10 +57,32 @@ public class Tests
     public void FinalScore_Should_Return_Correct_Value_For_All_Spare()
     {
         
-        var game = new BowlingGame("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5");
+        var game = new BowlingGame("8/ 5/ 4/ 7/ 5/ 5/ 3/ 9/ 5/ 5/5");
 
-        var expected = 150;
+        var expected = 153;
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
+    [Test]
+    public void FinalScore_Should_Return_Correct_Value_For_Other_Possible_Scores()
+    {
+        
+        var game = new BowlingGame("45 54 36 27 -9 63 81 18 9- 7/ 5");
+
+        var expected = 96;
+        
+        Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
+    }
+    [Test]
+    public void FinalScore_Should_Return_Correct_Value_For_Sprike()
+    {
+        
+        var game = new BowlingGame("12 34 0/ 0/ X X 00 18 72 X 0/");
+
+        var expected = 108;
+        
+        Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
+    }
+
+    
 }
