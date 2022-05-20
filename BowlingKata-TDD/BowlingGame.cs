@@ -36,10 +36,11 @@ public class BowlingGame
                 sum += intScores[counter] + intScores[counter + 1];
                 continue;
             }
-
+            
             if (counter + 2 >= intScores.Count) 
                 break;
             
+            //Bonus Round
             sum += intScores[counter] + intScores[counter + 1] + intScores[counter + 2];
             
             //because of Strike or Spare, we need to wait for the next round
