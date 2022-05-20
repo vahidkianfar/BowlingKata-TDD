@@ -1,4 +1,4 @@
-## This project is not completed yet (I will refactor the whole project and add more unit test)
+## This project is working but is not completed yet (I will refactor the whole project and add more unit test)
 
 ### Problem Description
 
