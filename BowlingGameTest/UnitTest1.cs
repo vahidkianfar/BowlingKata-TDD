@@ -12,7 +12,7 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void FirstTest()
     {
         //Arrange
         var game = new BowlingGame("X X");
@@ -80,6 +80,27 @@ public class Tests
         var game = new BowlingGame("12 34 0/ 0/ X X 00 18 72 X 0/");
 
         var expected = 108;
+        
+        Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
+    }
+    [Test]
+    public void FinalScore_Should_Return_Correct_Value_For_All_Missed()
+    {
+        
+        var game = new BowlingGame("-- -- -- -- -- -- -- -- -- --");
+        //var game = new BowlingGame("00 00 00 00 00 00 00 00 00 00");
+
+        var expected = 0;
+        
+        Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
+    }
+    [Test]
+    public void FinalScore_Should_Return_Correct_Value_For_Incomplete_Game()
+    {
+        
+        var game = new BowlingGame("-1 23 45");
+
+        var expected = 15;
         
         Assert.AreEqual(expected,game.FinalScore(game.Conversion()));
     }
